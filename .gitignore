@@ -2,4 +2,4 @@ env/
 *.pyc
 lib
 __pycache__/
-
+wallet.txt
