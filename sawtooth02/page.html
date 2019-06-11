@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Create Transaction</h2>
+    <form action="{{ url_for('change_action') }}" method=post>
+        <p class="heading">Transaction Type:<select name="action" onchange="this.form.submit()">
+       {% if action== "create_project" %}
+       <option value="create_project" selected>Create Project</option>
+       {% else %}
+       <option value="create_project">Create Project</option>
+       {% endif %}
+       {% if action== "create_task" %}
+       <option value="create_task" selected>Create Task</option>
+       {% else %}
+       <option value="create_task">Create Task</option>
+       {% endif %}
+       {% if action== "edit_task" %}
+       <option value="edit_task" selected>Edit Task</option>
+       {% else %}
+       <option value="edit_task">Edit Task</option>
+       {% endif %}
+       {% if action== "progress_task" %}
+       <option value="progress_task" selected>Progress Task</option>
+       {% else %}
+       <option value="progress_task">Progress Task</option>
+       {% endif %}
+       {% if action== "add_user" %}
+       <option value="add_user" selected>Add User</option>
+       {% else %}
+       <option value="add_user">Add User</option>
+       {% endif %}
+   </select>
+    </form>
+	<form action="{{ url_for('send') }}" method=post>
+  	 <p class="heading">Password: <input type=text name=password>
+  	 <p class="heading">Project Name: <input type=text name=project_name>
+  	 {% if fields['task_name'] %}
+  	 <p class="heading">Task Name: <input type=text name=task_name>
+   	{% endif %}
+   	{% if fields['task_description'] %}
+   	<p class="heading">Task Description: <input type=text name=task_description>
+  	{% endif %}
+  	{% if fields['new_password'] %}
+	<p class="heading">New Password: <input type=text name=new_password>
+	{% endif %}
+	<p><input type=submit value=Send Transaction></p>
+	</form>
+{% endblock %}
