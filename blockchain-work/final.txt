@@ -1,0 +1,9 @@
+Poof of multiple deployments and testing on the Ropsten network https://ropsten.etherscan.io/txs?a=0x173828e45c574057a1b3e60bf880e0c000eb305b
+My wallet address 0x173828e45c574057A1B3E60bf880e0c000eb305B
+
+Aside: I decided to cut the presentaion a bit short rather than ramble on through me testing every aspect for the camera. I'm hoping that was the right decision after several attempts at recording. If you do have any feedback please feel free to reach out to me. 
+
+
+Thanks, Wu-Chang. 
+
+Brian D. Allen 
